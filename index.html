@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>App Store Việt Nam - Ứng dụng & Trò chơi</title>
+
+    <meta name="description"
+          content="Khám phá ứng dụng và trò chơi mới nhất.">
+
+    <meta name="robots" content="index, follow">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        <div class="play-logo"></div>
+        <span>App Store</span>
+    </div>
+
+    <div class="search">
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Tìm kiếm ứng dụng và trò chơi..."
+        >
+
+        <button onclick="searchApps()">🔍</button>
+    </div>
+
+    <button
+        class="theme-button"
+        onclick="toggleDarkMode()"
+    >
+        🌙
+    </button>
+
+    <div class="avatar">
+        U
+    </div>
+
+</header>
+
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <div class="menu active">
+            🏠 <span>Trang chủ</span>
+        </div>
+
+        <div class="menu">
+            🎮 <span>Trò chơi</span>
+        </div>
+
+        <div class="menu">
+            📱 <span>Ứng dụng</span>
+        </div>
+
+        <div class="menu">
+            ⭐ <span>Xếp hạng</span>
+        </div>
+
+        <div class="menu">
+            📚 <span>Sách</span>
+        </div>
+
+        <hr>
+
+        <div class="menu">
+            ⚙️ <span>Cài đặt</span>
+        </div>
+
+    </aside>
+
+
+    <main class="main">
+
+        <h1>Ứng dụng & trò chơi</h1>
+
+        <div class="tabs">
+
+            <button class="tab active">
+                Dành cho bạn
+            </button>
+
+            <button class="tab">
+                Xếp hạng cao nhất
+            </button>
+
+            <button class="tab">
+                Phổ biến
+            </button>
+
+        </div>
+
+
+        <section>
+
+            <h2>Ứng dụng nổi bật</h2>
+
+            <div
+                id="appList"
+                class="app-grid"
+            >
+
+                <!-- TikTok -->
+
+                <article
+                    class="app-card"
+                    data-name="TikTok"
+                    onclick="openApp('TikTok')"
+                >
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/a9/TikTok_logo.svg"
+                        alt="TikTok"
+                    >
+
+                    <div class="app-info">
+
+                        <h3>TikTok</h3>
+
+                        <p>TikTok Pte. Ltd.</p>
+
+                        <div class="rating">
+                            ★ 4.5
+                        </div>
+
+                        <small>
+                            1B+ lượt tải
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="install"
+                        onclick="event.stopPropagation(); showStorageFull()"
+                    >
+                        Cài đặt
+                    </button>
+
+                </article>
+
+
+                <!-- YouTube -->
+
+                <article
+                    class="app-card"
+                    data-name="YouTube"
+                    onclick="openApp('YouTube')"
+                >
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.svg"
+                        alt="YouTube"
+                    >
+
+                    <div class="app-info">
+
+                        <h3>YouTube</h3>
+
+                        <p>Google LLC</p>
+
+                        <div class="rating">
+                            ★ 4.2
+                        </div>
+
+                        <small>
+                            10B+ lượt tải
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="install"
+                        onclick="event.stopPropagation(); showStorageFull()"
+                    >
+                        Cài đặt
+                    </button>
+
+                </article>
+
+
+                <!-- Facebook -->
+
+                <article
+                    class="app-card"
+                    data-name="Facebook"
+                    onclick="openApp('Facebook')"
+                >
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                        alt="Facebook"
+                    >
+
+                    <div class="app-info">
+
+                        <h3>Facebook</h3>
+
+                        <p>Meta Platforms</p>
+
+                        <div class="rating">
+                            ★ 4.3
+                        </div>
+
+                        <small>
+                            5B+ lượt tải
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="install"
+                        onclick="event.stopPropagation(); showStorageFull()"
+                    >
+                        Cài đặt
+                    </button>
+
+                </article>
+
+
+                <!-- Instagram -->
+
+                <article
+                    class="app-card"
+                    data-name="Instagram"
+                    onclick="openApp('Instagram')"
+                >
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png"
+                        alt="Instagram"
+                    >
+
+                    <div class="app-info">
+
+                        <h3>Instagram</h3>
+
+                        <p>Instagram</p>
+
+                        <div class="rating">
+                            ★ 4.6
+                        </div>
+
+                        <small>
+                            5B+ lượt tải
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="install"
+                        onclick="event.stopPropagation(); showStorageFull()"
+                    >
+                        Cài đặt
+                    </button>
+
+                </article>
+
+
+                <!-- Spotify -->
+
+                <article
+                    class="app-card"
+                    data-name="Spotify"
+                    onclick="openApp('Spotify')"
+                >
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg"
+                        alt="Spotify"
+                    >
+
+                    <div class="app-info">
+
+                        <h3>Spotify</h3>
+
+                        <p>Spotify AB</p>
+
+                        <div class="rating">
+                            ★ 4.4
+                        </div>
+
+                        <small>
+                            1B+ lượt tải
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="install"
+                        onclick="event.stopPropagation(); showStorageFull()"
+                    >
+                        Cài đặt
+                    </button>
+
+                </article>
+
+
+                <!-- Telegram -->
+
+                <article
+                    class="app-card"
+                    data-name="Telegram"
+                    onclick="openApp('Telegram')"
+                >
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"
+                        alt="Telegram"
+                    >
+
+                    <div class="app-info">
+
+                        <h3>Telegram</h3>
+
+                        <p>Telegram FZ-LLC</p>
+
+                        <div class="rating">
+                            ★ 4.5
+                        </div>
+
+                        <small>
+                            1B+ lượt tải
+                        </small>
+
+                    </div>
+
+                    <button
+                        class="install"
+                        onclick="event.stopPropagation(); showStorageFull()"
+                    >
+                        Cài đặt
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- APP DETAIL -->
+
+<div
+    id="appModal"
+    class="modal"
+>
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            onclick="closeApp()"
+        >
+            ×
+        </button>
+
+        <img
+            id="detailIcon"
+            class="detail-icon"
+        >
+
+        <h2 id="detailName"></h2>
+
+        <p id="detailDeveloper"></p>
+
+        <div
+            id="detailRating"
+            class="rating"
+        ></div>
+
+        <p id="detailDescription"></p>
+
+        <button
+            class="detail-install"
+            onclick="showStorageFull()"
+        >
+            Cài đặt
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- STORAGE FULL -->
+
+<div
+    id="storageModal"
+    class="storage-modal"
+>
+
+    <div class="storage-box">
+
+        <div class="warning">
+            ⚠️
+        </div>
+
+        <h2>
+            DUNG LƯỢNG ĐÃ ĐẦY
+        </h2>
+
+        <p>
+            Không đủ dung lượng lưu trữ để cài đặt
+            ứng dụng này.
+        </p>
+
+        <button
+            onclick="closeStorageFull()"
+        >
+            Đóng
+        </button>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 App Store Demo
+    </p>
+
+    <p>
+        Website mô phỏng giao diện cửa hàng ứng dụng.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
